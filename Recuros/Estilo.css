@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.carrusel {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px #004080(0,0,0,0.3);
+    background: #fff;
+}
+
+.pregunta {
+    background-color: #004080;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    transition: all 0.6s ease;
+}
+
+.slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.slide img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.contenido {
+    margin-top: 10px;
+}
+
+/* Ocultar los inputs */
+input[type="radio"] {
+    display: none;
+}
+
+/* Mover el carrusel */
+#slide1:checked ~ .slides {
+    margin-left: 0;
+}
+#slide2:checked ~ .slides {
+    margin-left: -100%;
+}
+#slide3:checked ~ .slides {
+    margin-left: -200%;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.manual-btn {
+    border: 2px solid #004080;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 6px;
+    transition: background 0.3s;
+}
+
+.manual-btn:hover {
+    background: #004080;
+}
+
+.boton-pagina {
+    margin: 20px 0;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #004080;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.boton:hover {
+    background-color: #004080;
+}
+/* ===========================
+   Diseño Responsivo
+   =========================== */
+@media (max-width: 1024px) {
+    .carrusel {
+        width: 90%;
+    }
+
+    .slide img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .contenido {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .pregunta {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+
+    .slide img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contenido {
+        font-size: 0.9rem;
+    }
+
+    .manual-btn {
+        padding: 5px;
+        margin: 0 4px;
+    }
+
+    .boton {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrusel {
+        width: 95%;
+    }
+
+    .pregunta {
+        font-size: 1rem;
+        padding: 6px;
+    }
+
+    .slide img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contenido {
+        font-size: 0.85rem;
+    }
+
+    .manual-btn {
+        padding: 4px;
+        margin: 0 3px;
+    }
+
+    .boton {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 0.85rem;
+        box-sizing: border-box;
+    }
+}
